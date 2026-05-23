@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>420 Avis Avenue · Guest Guide</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface":                    "#fcf9f8",
+            "surface-dim":                "#dcd9d9",
+            "surface-container-lowest":   "#ffffff",
+            "surface-container-low":      "#f6f3f2",
+            "surface-container":          "#f0eded",
+            "surface-container-high":     "#eae7e7",
+            "surface-container-highest":  "#e4e2e1",
+            "on-surface":                 "#1b1c1c",
+            "on-surface-variant":         "#444842",
+            "outline":                    "#747872",
+            "outline-variant":            "#c4c8c0",
+            "primary":                    "#475347",
+            "on-primary":                 "#ffffff",
+            "primary-container":          "#5f6b5e",
+            "on-primary-container":       "#deebdb",
+            "primary-fixed":              "#d9e6d6",
+            "primary-fixed-dim":          "#bdcaba",
+            "inverse-primary":            "#bdcaba",
+            "secondary":                  "#6b5c4c",
+            "on-secondary":               "#ffffff",
+            "secondary-container":        "#f4dfcb",
+            "secondary-fixed":            "#f4dfcb",
+            "tertiary":                   "#50504d",
+            "on-tertiary":                "#ffffff",
+            "tertiary-container":         "#686864",
+            "tertiary-fixed":             "#e4e2dd",
+            "background":                 "#fcf9f8",
+            "on-background":              "#1b1c1c",
+            "error":                      "#ba1a1a",
+            "on-error":                   "#ffffff",
+            "inverse-surface":            "#303030",
+            "inverse-on-surface":         "#f3f0f0",
+            "surface-tint":               "#566155",
+            "surface-variant":            "#e4e2e1",
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg":      "0.5rem",
+            "xl":      "0.75rem",
+            "full":    "9999px"
+          },
+          spacing: {
+            "stack-sm":    "8px",
+            "stack-md":    "16px",
+            "stack-lg":    "32px",
+            "margin-main": "24px",
+            "gutter-grid": "16px",
+            "section-gap": "48px"
+          },
+          fontFamily: {
+            "display-lg":        ["Playfair Display", "serif"],
+            "headline-lg":       ["Playfair Display", "serif"],
+            "headline-lg-mobile":["Playfair Display", "serif"],
+            "headline-md":       ["Playfair Display", "serif"],
+            "body-lg":           ["Inter", "sans-serif"],
+            "body-md":           ["Inter", "sans-serif"],
+            "label-md":          ["Inter", "sans-serif"],
+            "label-sm":          ["Inter", "sans-serif"],
+          },
+          fontSize: {
+            "display-lg":        ["40px",  { lineHeight:"1.2", letterSpacing:"-0.02em", fontWeight:"700" }],
+            "headline-lg":       ["30px",  { lineHeight:"1.3", fontWeight:"600" }],
+            "headline-lg-mobile":["24px",  { lineHeight:"1.3", fontWeight:"600" }],
+            "headline-md":       ["20px",  { lineHeight:"1.4", fontWeight:"600" }],
+            "body-lg":           ["18px",  { lineHeight:"1.6", fontWeight:"400" }],
+            "body-md":           ["16px",  { lineHeight:"1.5", fontWeight:"400" }],
+            "label-md":          ["14px",  { lineHeight:"1.4", letterSpacing:"0.05em", fontWeight:"500" }],
+            "label-sm":          ["12px",  { lineHeight:"1.2", fontWeight:"600" }],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      white-space: nowrap;
+    }
+    .paper-texture {
+      background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBHsj6h0_3W22S-2lTRt6wk2VOJArRi0ioMAAXD3t_A_saSCSveBZUIGsJ1G-_LZ23IaMOWOtjEyFaOrRNer6FskFofghoTimwVEKEFMVF0DlWk2pcoDRIw-QYw6u1eiq43pR0949xONOOL0MksiqL7bO9yf21Rk3MZUYBS1nseMojSAlE6-xhHopQF2SD7InXh2iJZEY4YqOMJn5WLY22jFAN-oynGNh4uxIaDqB2L9lcFQsrrJk_D5K-0bO_bdkLQ_f1OvVVcuOv0);
+    }
+    .shadow-tactile { box-shadow: 0 10px 30px -5px rgba(71,83,71,0.08); }
+    .paper-shadow   { box-shadow: 0 8px 24px -4px rgba(0,0,0,0.07); }
+    .soft-elevation { box-shadow: 0 10px 30px -5px rgba(0,0,0,0.08); }
+
+    /* Section routing */
+    .page-section          { display: none; }
+    .page-section.active   { display: block; }
+
+    /* How-Tos tabs */
+    .howto-panel           { display: none; }
+    .howto-panel.active    { display: block; animation: fadeUp .3s ease-out; }
+
+    /* Around Us detail */
+    .around-detail         { display: none; }
+    .around-detail.active  { display: block; animation: fadeUp .25s ease-out; }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(10px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    body {
+      background-color: #fcf9f8;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-surface pb-28" style="max-width:480px;margin:0 auto;">
+
+  <!-- ════════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════════ -->
+  <header id="app-header" class="top-0 sticky z-40 flex items-center justify-between px-margin-main h-16 bg-surface transition-all duration-300" style="width:100%;">
+    <div class="w-6"></div>
+    <h1 class="font-headline-md text-headline-md text-on-surface">420 Avis Avenue</h1>
+    <div class="w-6"></div>
+  </header>
+
+  <!-- ════════════════════════════════════════════
+       HOME
+  ════════════════════════════════════════════ -->
+  <section id="sec-home" class="page-section active px-margin-main pt-stack-lg space-y-section-gap pb-8">
+
+    <!-- Hero greeting -->
+    <div class="space-y-stack-sm">
+      <p class="font-label-md text-label-md text-on-surface uppercase tracking-widest">A Warm Welcome</p>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Welcome to<br>420 Avis Avenue</h2>
+      <div class="h-0.5 w-12 bg-on-surface rounded-full mt-3"></div>
+      <p class="font-body-md text-body-md text-on-surface-variant pt-1">Everything you need for a comfortable stay is right here.</p>
+    </div>
+
+    <!-- Property image card -->
+    <div class="bg-surface-container-lowest rounded-xl soft-elevation overflow-hidden">
+      <div class="overflow-hidden" style="aspect-ratio:3/2;">
+        <img class="w-full h-full object-cover" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1549509783154370699/original/b96c79b2-f922-4742-9149-d9280c88cad6.jpeg?im_w=720" alt="420 Avis Avenue">
+      </div>
+      <div class="p-6">
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Your Home Away from Home</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Modern 2BR · fully stocked kitchen · in-unit laundry · fast WiFi · dedicated workspace. The entire half of a duplex — no shared spaces.</p>
+      </div>
+    </div>
+
+    <!-- Read upon Arrival button -->
+    <button onclick="go('arrival')" class="w-full bg-primary text-on-primary rounded-xl p-6 flex items-center justify-between soft-elevation active:scale-[0.98] transition-transform duration-150 text-left">
+      <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-on-primary" style="font-size:28px; font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;">waving_hand</span>
+        <div>
+          <p class="font-headline-md text-headline-md text-on-primary">Read upon Arrival</p>
+          <p class="font-label-sm text-label-sm text-on-primary mt-0.5" style="opacity:.7;">Locks · Bedroom ACs</p>
+        </div>
+      </div>
+      <span class="material-symbols-outlined text-on-primary" style="font-size:20px; opacity:.6;">arrow_forward</span>
+    </button>
+
+    <!-- Quick-link bento grid -->
+    <div class="grid grid-cols-2 gap-gutter-grid">
+      <button onclick="go('wifi')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
+        <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">wifi</span>
+        <div>
+          <p class="font-headline-md text-headline-md text-on-surface">WiFi</p>
+          <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Network Info</p>
+        </div>
+      </button>
+      <button onclick="go('howtos')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
+        <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">menu_book</span>
+        <div>
+          <p class="font-headline-md text-headline-md text-on-surface">How-Tos</p>
+          <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Appliances</p>
+        </div>
+      </button>
+      <button onclick="go('trash')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
+        <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">delete_outline</span>
+        <div>
+          <p class="font-headline-md text-headline-md text-on-surface">Trash</p>
+          <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Schedule</p>
+        </div>
+      </button>
+      <button onclick="go('around')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
+        <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">explore</span>
+        <div>
+          <p class="font-headline-md text-headline-md text-on-surface">Around Us</p>
+          <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Local Guide</p>
+        </div>
+      </button>
+    </div>
+
+    <!-- House rules -->
+    <div>
+      <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-stack-md">House Rules</h3>
+      <div class="bg-surface-container-lowest rounded-xl soft-elevation p-6 space-y-4">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-on-surface mt-0.5">smoke_free</span>
+          <p class="font-body-md text-body-md text-on-surface">No smoking inside the property</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-on-surface mt-0.5">volume_off</span>
+          <p class="font-body-md text-body-md text-on-surface">Quiet hours: 10:00 PM – 8:00 AM</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-on-surface mt-0.5">group_off</span>
+          <p class="font-body-md text-body-md text-on-surface">No parties or large gatherings. Please respect max occupancy.</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-on-surface mt-0.5">pets</span>
+          <p class="font-body-md text-body-md text-on-surface">No pets, please.</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-on-surface mt-0.5">directions_car</span>
+          <p class="font-body-md text-body-md text-on-surface">Free parking in the driveway and attached garage on premises.</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-on-surface mt-0.5">lock</span>
+          <p class="font-body-md text-body-md text-on-surface">Your door code was sent via text before arrival. Keep it private.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact host -->
+    <div class="bg-primary p-8 rounded-xl soft-elevation text-on-primary flex flex-col items-center text-center space-y-stack-md">
+      <span class="material-symbols-outlined text-on-primary" style="font-size:36px; font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;">support_agent</span>
+      <div>
+        <h3 class="font-headline-md text-headline-md text-on-primary">Need Help?</h3>
+        <p class="font-body-md text-body-md text-on-primary mt-1" style="opacity:.8;">We're here for you throughout your stay.</p>
+      </div>
+      <a href="tel:+13302312400" class="bg-on-primary text-primary px-8 py-3 rounded-full font-label-md text-label-md active:scale-95 transition-transform duration-150 inline-block">
+        Call / Text Sheena
+      </a>
+      <p class="font-label-sm text-label-sm text-on-primary" style="opacity:.65;">If it's urgent and Sheena doesn't answer, call David at <a href="tel:+14196513865" class="underline text-on-primary">419-651-3865</a></p>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       WIFI
+  ════════════════════════════════════════════ -->
+  <section id="sec-wifi" class="page-section px-margin-main pt-stack-lg space-y-section-gap pb-8">
+
+    <div>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-stack-sm">Seamless Connectivity</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant">Stay connected throughout your residence.</p>
+    </div>
+
+    <!-- Credentials card with paper texture -->
+    <div class="bg-surface-container-lowest rounded-xl p-8 paper-shadow relative overflow-hidden paper-texture">
+      <div class="absolute top-0 right-0 w-32 h-32 rounded-bl-full -mr-16 -mt-16" style="background:rgba(27,28,28,0.04);"></div>
+      <div class="relative z-10">
+        <div class="mb-stack-lg">
+          <label class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-2 block" style="opacity:.6;">Network Name</label>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-on-surface">wifi</span>
+            <span class="font-headline-md text-headline-md text-on-surface select-all">Cozy Acres</span>
+          </div>
+        </div>
+        <div class="mb-stack-lg">
+          <label class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-2 block" style="opacity:.6;">Password</label>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-on-surface">lock</span>
+            <span class="font-headline-md text-headline-md text-on-surface select-all" id="wifi-pw">cozystay</span>
+          </div>
+        </div>
+        <button id="copy-btn" onclick="copyWifi()" class="w-full py-4 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-all duration-150" style="background:#1b1c1c;color:#fff;">
+          <span class="material-symbols-outlined" id="copy-icon" style="font-size:20px;">content_copy</span>
+          <span id="copy-text">Copy Password</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- How to connect -->
+    <div>
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-md">How to Connect</h3>
+      <div class="space-y-stack-md">
+        <div class="flex gap-margin-main items-start">
+          <span class="font-headline-md text-headline-md shrink-0 w-8" style="color:rgba(27,28,28,0.18);">01</span>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface mb-1">Open WiFi Settings</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">Go to your device Settings and make sure WiFi is turned on.</p>
+          </div>
+        </div>
+        <div class="flex gap-margin-main items-start">
+          <span class="font-headline-md text-headline-md shrink-0 w-8" style="color:rgba(27,28,28,0.18);">02</span>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface mb-1">Select the Network</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">Look for <strong>Cozy Acres</strong> in the list of available networks.</p>
+          </div>
+        </div>
+        <div class="flex gap-margin-main items-start">
+          <span class="font-headline-md text-headline-md shrink-0 w-8" style="color:rgba(27,28,28,0.18);">03</span>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface mb-1">Enter the Password</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">Type <strong>cozystay</strong> — all lowercase, no spaces. Tap the copy button above!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-xl overflow-hidden relative" style="height:192px;">
+      <img class="w-full h-full object-cover" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1549509783154370699/original/5153a0df-fcd7-4aef-bdd1-57fd8fb21b41.jpeg?im_w=720" alt="420 Avis Avenue interior">
+      <div class="absolute inset-0 flex items-end p-margin-main" style="background:linear-gradient(to top, rgba(0,0,0,0.42), transparent);">
+        <p class="font-headline-md text-headline-md text-white">High-speed connection for your entire stay.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       HOW-TOS
+  ════════════════════════════════════════════ -->
+  <section id="sec-howtos" class="page-section pb-8">
+
+    <div class="px-margin-main pt-stack-lg mb-stack-lg">
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Guest Guides</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant">Essential instructions for a seamless stay.</p>
+    </div>
+
+    <!-- Serif tab bar -->
+    <div class="flex gap-stack-lg border-b border-surface-container-high px-margin-main mb-stack-lg" style="overflow-x:auto;">
+      <button class="howto-tab-btn pb-3 whitespace-nowrap font-headline-md text-headline-md text-on-surface border-b-2 border-on-surface" id="htab-tv" onclick="switchHowToTab('tv')">TV</button>
+      <button class="howto-tab-btn pb-3 whitespace-nowrap font-headline-md text-headline-md text-on-surface border-b-2 border-transparent" id="htab-thermostat" onclick="switchHowToTab('thermostat')" style="opacity:.4;">Thermostat</button>
+      <button class="howto-tab-btn pb-3 whitespace-nowrap font-headline-md text-headline-md text-on-surface border-b-2 border-transparent" id="htab-ac" onclick="switchHowToTab('ac')" style="opacity:.4;">AC</button>
+    </div>
+
+    <!-- TV Panel -->
+    <!-- TODO: Fill in real TV make/model/remote instructions -->
+    <div id="howto-tv" class="howto-panel active px-margin-main space-y-stack-md">
+      <div class="rounded-xl overflow-hidden shadow-sm mb-stack-md" style="aspect-ratio:16/9;">
+        <img class="w-full h-full object-cover" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1549509783154370699/original/51535abb-b84b-4db5-9490-6ba2317c6bca.jpeg?im_w=720" alt="Living room">
+      </div>
+      <!-- PLACEHOLDER: Fill in real TV make/model/remote instructions -->
+      <div class="bg-surface-container-lowest p-5 rounded-xl shadow-tactile flex items-start gap-4">
+        <span class="font-headline-md text-on-surface shrink-0" style="opacity:.5;">1.</span>
+        <p class="font-body-md text-on-surface">[Step 1 — e.g., Locate the remote on the coffee table and press the Power button]</p>
+      </div>
+      <div class="bg-surface-container-lowest p-5 rounded-xl shadow-tactile flex items-start gap-4">
+        <span class="font-headline-md text-on-surface shrink-0" style="opacity:.5;">2.</span>
+        <p class="font-body-md text-on-surface">[Step 2 — e.g., Streaming apps like Netflix are pre-loaded. Log in with your own account.]</p>
+      </div>
+      <div class="bg-surface-container-lowest p-5 rounded-xl shadow-tactile flex items-start gap-4">
+        <span class="font-headline-md text-on-surface shrink-0" style="opacity:.5;">3.</span>
+        <p class="font-body-md text-on-surface">[Step 3 — e.g., Use the Input button to switch sources if needed]</p>
+      </div>
+    </div>
+
+    <!-- Thermostat Panel -->
+    <!-- TODO: Replace image + fill in real instructions -->
+    <div id="howto-thermostat" class="howto-panel px-margin-main space-y-stack-md">
+      <div class="rounded-xl overflow-hidden shadow-sm mb-stack-md" style="aspect-ratio:16/9;">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCru1FELN5z6hg8CYEWaWzSoV6ymzQOGbJpAJDbes-e0HBtNXVlN43tc6VIIdTawlPMMOkWpNbOrDNmhrddyP34rX02jO-MQre0wRMCk1LMYgK4-1ZUYzApt6qHP_T8eZY08lvVMuocscbg9KLE0ukOOKWpjfPrcquO4jq42NCSOBK6FRzyQDqwDO_gcmC6YWaivyBK7kWohqWGaz5JogvuRmw-LVKtO7aCNvctlEneechLUKC1jmwDNpTutGcFs5JlaPm3wTuuwLPU" alt="Thermostat">
+      </div>
+      <!-- PLACEHOLDER: Fill in real thermostat type, location, and range -->
+      <div class="bg-surface-container-lowest p-5 rounded-xl shadow-tactile flex items-start gap-4">
+        <span class="font-headline-md text-on-surface shrink-0" style="opacity:.5;">1.</span>
+        <p class="font-body-md text-on-surface">[Step 1 — e.g., The thermostat is located on the hallway wall]</p>
+      </div>
+      <div class="bg-surface-container-lowest p-5 rounded-xl shadow-tactile flex items-start gap-4">
+        <span class="font-headline-md text-on-surface shrink-0" style="opacity:.5;">2.</span>
+        <p class="font-body-md text-on-surface">[Step 2 — e.g., Rotate the ring clockwise to increase, counter-clockwise to decrease]</p>
+      </div>
+      <div class="bg-surface-container-lowest p-5 rounded-xl shadow-tactile flex items-start gap-4">
+        <span class="font-headline-md text-on-surface shrink-0" style="opacity:.5;">3.</span>
+        <p class="font-body-md text-on-surface">[Step 3 — e.g., Please keep between 68–74°F to protect the system]</p>
+      </div>
+    </div>
+
+    <!-- AC Panel -->
+    <div id="howto-ac" class="howto-panel px-margin-main space-y-stack-md">
+
+      <!-- Warm context note -->
+      <div class="bg-primary-fixed rounded-xl p-5">
+        <p class="font-label-md text-label-md text-on-surface mb-1">A note from us 🌿</p>
+        <p class="font-body-md text-body-md text-on-surface-variant" style="font-size:14px;">The bedrooms are upstairs, and on warm days the whole-house AC can have a harder time keeping them cool. We've added supplemental AC units in both bedrooms for your comfort. When you leave, we'd so appreciate you turning the whole-house thermostat up a few degrees — it helps bring things back to a comfortable temperature quickly for the next guests.</p>
+      </div>
+
+      <!-- Small bedroom -->
+      <div>
+        <p class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-stack-sm" style="opacity:.6;">Small Bedroom</p>
+        <div class="bg-surface-container-lowest p-5 rounded-xl shadow-tactile flex items-start gap-4">
+          <span class="material-symbols-outlined text-on-surface mt-0.5 shrink-0" style="font-size:22px;">ac_unit</span>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface mb-1">Window Air Conditioner</p>
+            <p class="font-body-md text-body-md text-on-surface-variant" style="font-size:14px;">Use the controls on the unit or the remote to set your temperature. Keep the window closed around the unit while it's running for best cooling.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Large bedroom -->
+      <div>
+        <p class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-stack-sm" style="opacity:.6;">Large Bedroom</p>
+        <div class="bg-surface-container-lowest p-5 rounded-xl shadow-tactile flex items-start gap-4">
+          <span class="material-symbols-outlined text-on-surface mt-0.5 shrink-0" style="font-size:22px;">mode_fan</span>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface mb-1">Portable Floor Air Conditioner</p>
+            <p class="font-body-md text-body-md text-on-surface-variant" style="font-size:14px;">Use the controls on the unit or the remote. The exhaust hose vents out the window — please leave it connected. Close other windows in the room while running.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reminder -->
+      <div class="bg-surface-container-lowest p-5 rounded-xl shadow-tactile flex items-start gap-4">
+        <span class="material-symbols-outlined text-on-surface mt-0.5 shrink-0" style="font-size:22px;">thermostat</span>
+        <p class="font-body-md text-body-md text-on-surface-variant" style="font-size:14px;">These units are installed during summer months to help with upstairs comfort — the whole-house AC does the heavy lifting, and these help bring the temperature down quickly when you return.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       ARRIVAL
+  ════════════════════════════════════════════ -->
+  <section id="sec-arrival" class="page-section px-margin-main pt-stack-lg space-y-section-gap pb-8">
+
+    <div>
+      <h2 class="font-display-lg text-display-lg text-on-surface leading-tight">Welcome<br>In</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant mt-2 italic">A few things to know when you first arrive.</p>
+    </div>
+
+    <!-- Keypad locks -->
+    <div>
+      <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-stack-md">Electronic Keypad Locks</h3>
+      <div class="space-y-gutter-grid">
+
+        <div class="bg-surface-container-lowest p-6 rounded-xl paper-shadow flex gap-4 items-start" style="border-left:4px solid #475347;">
+          <div class="flex-1">
+            <h4 class="font-headline-md text-headline-md text-on-surface mb-2">To Unlock</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">Enter your code, then press the <strong>✓ checkmark</strong>. Pull the door toward you while the lock is moving — it helps the bolt seat properly.</p>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest p-6 rounded-xl paper-shadow flex gap-4 items-start" style="border-left:4px solid #475347;">
+          <div class="flex-1">
+            <h4 class="font-headline-md text-headline-md text-on-surface mb-2">To Lock</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">Pull the door firmly closed, then press the <strong>✓ checkmark</strong> while holding it shut. You'll feel it engage.</p>
+          </div>
+        </div>
+
+        <div class="bg-surface-container p-5 rounded-xl flex items-start gap-4">
+          <span class="material-symbols-outlined text-on-surface-variant shrink-0 mt-0.5" style="font-size:20px;">battery_low</span>
+          <p class="font-body-md text-body-md text-on-surface-variant" style="font-size:14px;">If the ✓ turns red or orange, the battery is low. Spare batteries are in the toolbox.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bedroom ACs -->
+    <div>
+      <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-stack-md">Bedroom Air Conditioners</h3>
+      <div class="space-y-gutter-grid">
+
+        <div class="bg-surface-container-lowest p-6 rounded-xl paper-shadow">
+          <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-2" style="font-size:11px;">Small Bedroom</p>
+          <h4 class="font-headline-md text-headline-md text-on-surface mb-2">Window Unit</h4>
+          <p class="font-body-md text-body-md text-on-surface-variant">Use the controls on the unit or the remote. Keep the window sealed around the unit while running for best cooling.</p>
+        </div>
+
+        <div class="bg-surface-container-lowest p-6 rounded-xl paper-shadow">
+          <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-2" style="font-size:11px;">Large Bedroom</p>
+          <h4 class="font-headline-md text-headline-md text-on-surface mb-2">Portable Floor Unit</h4>
+          <p class="font-body-md text-body-md text-on-surface-variant">Use the controls on the unit or the remote. Please leave the exhaust hose connected to the window — it vents the warm air outside.</p>
+        </div>
+
+        <div class="bg-primary-fixed p-5 rounded-xl">
+          <p class="font-body-md text-body-md text-on-surface leading-relaxed" style="font-size:14px;">These units are installed in summer to keep the upstairs bedrooms comfortable — the whole-house AC works hard, and these help bring the temperature back down quickly. When you leave, turning the thermostat up a couple degrees is genuinely appreciated. 🌿</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       TRASH
+  ════════════════════════════════════════════ -->
+  <section id="sec-trash" class="page-section px-margin-main pt-stack-lg space-y-section-gap pb-8">
+
+    <div>
+      <h2 class="font-display-lg text-display-lg text-on-surface leading-tight">Waste<br>Management</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant mt-2 italic">A quiet contribution to the neighborhood's charm.</p>
+    </div>
+
+    <!-- Pickup schedule -->
+    <div>
+      <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-stack-md">Weekly Schedule</h3>
+      <div class="space-y-gutter-grid">
+        <div class="bg-surface-container-lowest p-5 rounded-xl paper-shadow flex gap-4 items-start" style="border-left:4px solid #475347;">
+          <div class="flex-1">
+            <div class="flex items-center justify-between mb-3">
+              <span class="material-symbols-outlined text-on-surface" style="font-size:28px;">delete_outline</span>
+              <span class="font-label-sm text-label-sm bg-primary-fixed text-on-surface px-3 py-1 rounded-full">Friday</span>
+            </div>
+            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">General Trash</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">Trash is collected <strong>Friday morning</strong>. Please roll the tote out to the street <strong>Thursday evening</strong>.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-5 rounded-xl paper-shadow flex gap-4 items-start" style="border-left:4px solid #6b5c4c;">
+          <div class="flex-1">
+            <div class="flex items-center justify-between mb-3">
+              <span class="material-symbols-outlined text-on-surface" style="font-size:28px;">recycling</span>
+              <span class="font-label-sm text-label-sm bg-secondary-fixed text-on-surface px-3 py-1 rounded-full">Drop-off</span>
+            </div>
+            <h4 class="font-headline-md text-headline-md text-on-surface mb-1">Recycling</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-3">There is no curbside recycling pickup. The nearest drop-off is a short drive away:</p>
+            <p class="font-label-md text-label-md text-on-surface mb-3">Perry Twp Recycling Station<br><span class="text-on-surface-variant font-body-md" style="font-size:14px;">5075 Southway St SW, Canton, OH 44706</span></p>
+            <a href="https://maps.google.com/?q=5075+Southway+St+SW+Canton+OH+44706" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-label-md text-label-md active:opacity-60" style="color:#475347;font-size:13px;">
+              <span class="material-symbols-outlined" style="font-size:16px;">directions</span>Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bin location -->
+    <!-- TODO: Replace with actual photo of bin location -->
+    <div class="bg-surface-container-lowest rounded-xl overflow-hidden paper-shadow">
+      <div class="relative overflow-hidden" style="aspect-ratio:16/9;">
+        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN4uEx5IAjwas0XchvCH1T_O9iGHUpyZkIyrf19GKoeH_Ubt2Njf1jr4jghIO6JPkaj7InxslD5tqKCcWj6r7MMEucSOeBfdYUl0PFiEhGDEblQ5YiawTdUMvCrLNEMtwkNvMnXoP-6-nhNAOtODqfXkY2i6SBrdkHHVy8h0c2wFKdBmKlzQPGFl4GkFXIoYBWxGsFiCDSKu6GXy8" alt="Bin location">
+        <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(0,0,0,0.42), transparent);"></div>
+        <div class="absolute bottom-4 left-4 text-white flex items-center gap-2">
+          <span class="material-symbols-outlined" style="font-size:16px;">location_on</span>
+          <span class="font-label-md text-label-md">Sidewalk, right of the garage</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Where to Find the Bins</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">The trash tote is on the sidewalk to the right of the garage. When rolling it out to the street, position the tote with the <strong>silver bar facing the street</strong>. Roll it back after Friday morning pickup.</p>
+      </div>
+    </div>
+
+    <!-- Sorting guide -->
+    <div>
+      <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-stack-md">Sorting Guide</h3>
+      <div class="space-y-gutter-grid">
+        <div class="flex items-start gap-4 p-4 bg-surface-container-low rounded-xl">
+          <div class="w-12 h-12 flex-shrink-0 bg-surface-container-lowest rounded-lg flex items-center justify-center shadow-sm">
+            <span class="material-symbols-outlined text-on-surface">local_drink</span>
+          </div>
+          <div>
+            <h4 class="font-label-md text-label-md text-on-surface">Bottles & Cans</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-1" style="font-size:14px;">Rinse lightly. Plastics #1–5, aluminum, and glass go in the recycling bin.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-surface-container-low rounded-xl">
+          <div class="w-12 h-12 flex-shrink-0 bg-surface-container-lowest rounded-lg flex items-center justify-center shadow-sm">
+            <span class="material-symbols-outlined text-on-surface">description</span>
+          </div>
+          <div>
+            <h4 class="font-label-md text-label-md text-on-surface">Paper & Cardboard</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-1" style="font-size:14px;">Flatten all boxes before recycling. No greasy pizza boxes, please.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 p-4 bg-surface-container-low rounded-xl">
+          <div class="w-12 h-12 flex-shrink-0 bg-surface-container-lowest rounded-lg flex items-center justify-center shadow-sm">
+            <span class="material-symbols-outlined text-on-surface">compost</span>
+          </div>
+          <div>
+            <h4 class="font-label-md text-label-md text-on-surface">Food Waste</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-1" style="font-size:14px;">Please bag food waste securely and place in the general trash bin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       AROUND US
+  ════════════════════════════════════════════ -->
+  <section id="sec-around" class="page-section pb-8">
+
+    <!-- ── Category index ── -->
+    <div id="around-index" class="px-margin-main pt-stack-lg space-y-section-gap">
+
+      <div>
+        <h2 class="font-display-lg text-display-lg text-on-surface leading-tight">Around Us</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Local favorites from us to you.</p>
+      </div>
+
+      <!-- Neighborhood hero image -->
+      <div class="w-full rounded-xl overflow-hidden shadow-tactile relative" style="aspect-ratio:16/9;">
+        <img class="w-full h-full object-cover" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1549509783154370699/original/11cd57aa-3139-4b02-b37b-56d46bd1f3b5.jpeg?im_w=720" alt="420 Avis Avenue">
+        <div class="absolute inset-0 flex items-end p-margin-main" style="background:linear-gradient(to top,rgba(0,0,0,0.42),transparent);">
+          <span class="font-headline-md text-headline-md text-white">Massillon, Ohio</span>
+        </div>
+      </div>
+
+      <!-- Category grid -->
+      <div class="grid grid-cols-2 gap-gutter-grid">
+        <button onclick="showCategory('dining')" class="bg-surface-container-lowest rounded-xl p-stack-md flex flex-col gap-stack-sm shadow-tactile text-left active:scale-95 transition-transform duration-150">
+          <div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center mb-2">
+            <span class="material-symbols-outlined" style="color:#475347;">restaurant</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface">Dining</h3>
+          <p class="font-label-md text-label-md text-on-surface-variant">3 spots</p>
+        </button>
+        <button onclick="showCategory('grocery')" class="bg-surface-container-lowest rounded-xl p-stack-md flex flex-col gap-stack-sm shadow-tactile text-left active:scale-95 transition-transform duration-150">
+          <div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center mb-2">
+            <span class="material-symbols-outlined" style="color:#50504d;">local_grocery_store</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface">Grocery</h3>
+          <p class="font-label-md text-label-md text-on-surface-variant">6 spots</p>
+        </button>
+        <button onclick="showCategory('shopping')" class="bg-surface-container-lowest rounded-xl p-stack-md flex flex-col gap-stack-sm shadow-tactile text-left active:scale-95 transition-transform duration-150">
+          <div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center mb-2">
+            <span class="material-symbols-outlined" style="color:#6b5c4c;">shopping_bag</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface">Shopping</h3>
+          <p class="font-label-md text-label-md text-on-surface-variant">Coming soon</p>
+        </button>
+        <button onclick="showCategory('entertainment')" class="bg-surface-container-lowest rounded-xl p-stack-md flex flex-col gap-stack-sm shadow-tactile text-left active:scale-95 transition-transform duration-150">
+          <div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center mb-2">
+            <span class="material-symbols-outlined" style="color:#475347;">local_activity</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-on-surface">Entertainment</h3>
+          <p class="font-label-md text-label-md text-on-surface-variant">Coming soon</p>
+        </button>
+        <!-- With Kids — full width -->
+        <button onclick="showCategory('kids')" class="col-span-2 bg-surface-container-lowest rounded-xl p-stack-md shadow-tactile text-left active:scale-95 transition-transform duration-150">
+          <div class="flex items-center gap-stack-md">
+            <div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined" style="color:#6b5c4c;">child_care</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface">With Kids</h3>
+              <p class="font-label-md text-label-md text-on-surface-variant">Parks & Play</p>
+            </div>
+            <span class="material-symbols-outlined text-outline ml-auto">chevron_right</span>
+          </div>
+        </button>
+      </div>
+
+    </div><!-- /around-index -->
+
+    <!-- ── DINING detail ── -->
+    <div id="detail-dining" class="around-detail px-margin-main pt-stack-lg pb-8">
+      <button onclick="backToCategories()" class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md mb-stack-lg active:opacity-60 transition-opacity">
+        <span class="material-symbols-outlined">arrow_back</span>Back to Around Us
+      </button>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Dining</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">Our favorite spots for a great meal.</p>
+      <div class="space-y-gutter-grid">
+
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-tactile">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-1">The Howlin Bird</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">Local favorite — great chicken and casual eats.</p>
+          <a href="https://www.howlinbird.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-label-md text-label-md active:opacity-60" style="color:#475347;">
+            <span class="material-symbols-outlined" style="font-size:18px;">open_in_new</span>Visit Website
+          </a>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-tactile">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-1">The Nook Smokehouse & Grille</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">Massillon, OH — BBQ, ribs, and grille favorites.</p>
+          <a href="https://thenookuis.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-label-md text-label-md active:opacity-60" style="color:#475347;">
+            <span class="material-symbols-outlined" style="font-size:18px;">open_in_new</span>Visit Website
+          </a>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-tactile">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Marco's Pizza</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">Local Marco's — order online for pickup or delivery.</p>
+          <a href="https://order.marcos.com/menu?id=LPK854" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-label-md text-label-md active:opacity-60" style="color:#475347;">
+            <span class="material-symbols-outlined" style="font-size:18px;">open_in_new</span>Order Online
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── GROCERY detail ── -->
+    <div id="detail-grocery" class="around-detail px-margin-main pt-stack-lg pb-8">
+      <button onclick="backToCategories()" class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md mb-stack-lg active:opacity-60 transition-opacity">
+        <span class="material-symbols-outlined">arrow_back</span>Back to Around Us
+      </button>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Grocery</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">Stock up close to home — or explore a few miles out.</p>
+
+      <p class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-stack-md">Local — Massillon</p>
+      <div class="space-y-gutter-grid mb-section-gap">
+
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-tactile">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Aldi</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">2624 Lincoln Way E, Massillon, OH 44646</p>
+          <a href="https://maps.google.com/?q=2624+Lincoln+Way+E+Massillon+OH+44646" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-label-md text-label-md active:opacity-60" style="color:#475347;">
+            <span class="material-symbols-outlined" style="font-size:18px;">directions</span>Get Directions
+          </a>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-tactile">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Giant Eagle</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">Meadows Plaza · 2032 Lincoln Way E, Massillon, OH 44646</p>
+          <a href="https://maps.google.com/?q=2032+Lincoln+Way+E+Massillon+OH+44646" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-label-md text-label-md active:opacity-60" style="color:#475347;">
+            <span class="material-symbols-outlined" style="font-size:18px;">directions</span>Get Directions
+          </a>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-tactile">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Troyer's Dutch Market</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">An Amish market with a little of everything — fresh-baked breads and cinnamon rolls, bulk foods, chips, pretzels, and snacks. The deli counter is a highlight: grab sliced deli meat or a made-to-order sandwich to go. No dine-in seating.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://troyersdutchmarket.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-label-md text-label-md active:opacity-60" style="color:#475347;">
+              <span class="material-symbols-outlined" style="font-size:18px;">open_in_new</span>Website
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="font-label-md text-label-md text-on-surface uppercase tracking-widest mb-stack-md">If You Go to Canton</p>
+      <div class="space-y-gutter-grid">
+
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-tactile">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Meijer</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">4934 Fulton Dr NW, Canton, OH 44718 — Full-size grocery and general merchandise.</p>
+          <a href="https://maps.google.com/?q=4934+Fulton+Dr+NW+Canton+OH+44718" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-label-md text-label-md active:opacity-60" style="color:#475347;">
+            <span class="material-symbols-outlined" style="font-size:18px;">directions</span>Get Directions
+          </a>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-tactile">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Fresh Thyme Market</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">5509 Dressler Rd NW, North Canton · Organic produce, natural foods, and bulk items.</p>
+          <a href="https://maps.google.com/?q=5509+Dressler+Rd+NW+North+Canton+OH" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-label-md text-label-md active:opacity-60" style="color:#475347;">
+            <span class="material-symbols-outlined" style="font-size:18px;">directions</span>Get Directions
+          </a>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl p-6 shadow-tactile">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-1">Raisin Rack Natural Food Market</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">4629 Cleveland Ave NW, Canton · Organic, vegan, and gluten-free groceries.</p>
+          <a href="https://maps.google.com/?q=4629+Cleveland+Ave+NW+Canton+OH" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-label-md text-label-md active:opacity-60" style="color:#475347;">
+            <span class="material-symbols-outlined" style="font-size:18px;">directions</span>Get Directions
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── SHOPPING detail ── -->
+    <div id="detail-shopping" class="around-detail px-margin-main pt-stack-lg pb-8">
+      <button onclick="backToCategories()" class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md mb-stack-lg active:opacity-60 transition-opacity">
+        <span class="material-symbols-outlined">arrow_back</span>Back to Around Us
+      </button>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Shopping</h2>
+      <div class="bg-surface-container rounded-xl p-8 text-center mt-section-gap">
+        <span class="material-symbols-outlined text-outline mb-3 block" style="font-size:40px;">shopping_bag</span>
+        <p class="font-body-md text-body-md text-on-surface-variant">More recommendations coming soon.</p>
+      </div>
+    </div>
+
+    <!-- ── ENTERTAINMENT detail ── -->
+    <div id="detail-entertainment" class="around-detail px-margin-main pt-stack-lg pb-8">
+      <button onclick="backToCategories()" class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md mb-stack-lg active:opacity-60 transition-opacity">
+        <span class="material-symbols-outlined">arrow_back</span>Back to Around Us
+      </button>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Entertainment</h2>
+      <div class="bg-surface-container rounded-xl p-8 text-center mt-section-gap">
+        <span class="material-symbols-outlined text-outline mb-3 block" style="font-size:40px;">local_activity</span>
+        <p class="font-body-md text-body-md text-on-surface-variant">More recommendations coming soon.</p>
+      </div>
+    </div>
+
+    <!-- ── WITH KIDS detail ── -->
+    <div id="detail-kids" class="around-detail px-margin-main pt-stack-lg pb-8">
+      <button onclick="backToCategories()" class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md mb-stack-lg active:opacity-60 transition-opacity">
+        <span class="material-symbols-outlined">arrow_back</span>Back to Around Us
+      </button>
+      <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">With Kids</h2>
+      <div class="bg-surface-container rounded-xl p-8 text-center mt-section-gap">
+        <span class="material-symbols-outlined text-outline mb-3 block" style="font-size:40px;">child_care</span>
+        <p class="font-body-md text-body-md text-on-surface-variant">More recommendations coming soon.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       CHECKOUT
+  ════════════════════════════════════════════ -->
+  <section id="sec-checkout" class="page-section px-margin-main pt-stack-lg space-y-section-gap pb-8">
+
+    <!-- Hero image -->
+    <div class="rounded-xl overflow-hidden relative soft-elevation" style="height:192px;">
+      <img class="w-full h-full object-cover" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1549509783154370699/original/7bb0e39b-b03e-4734-a61a-c45935e3b7a2.jpeg?im_w=720" alt="420 Avis Avenue">
+      <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.42),transparent);"></div>
+      <div class="absolute bottom-4 left-4 text-white">
+        <p class="font-label-md text-label-md uppercase tracking-widest" style="opacity:.9;">Departure Day</p>
+      </div>
+    </div>
+
+    <!-- Time display -->
+    <div class="flex flex-col items-center text-center">
+      <span class="font-label-md text-label-md text-on-surface-variant mb-2">Checkout Time</span>
+      <h2 class="font-display-lg text-display-lg text-on-surface">11:00 AM</h2>
+      <div class="mt-4 px-6 py-2 bg-primary-fixed rounded-full">
+        <span class="font-label-sm text-label-sm text-on-surface">Please be out by 11 — thank you! 🌿</span>
+      </div>
+    </div>
+
+    <!-- Farewell note -->
+    <div class="bg-surface-container-lowest p-stack-lg rounded-xl paper-shadow" style="border-left:4px solid #475347;">
+      <!-- PLACEHOLDER: Update with your name and personal message -->
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">A Note from Your Host</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed">"It has been a true pleasure having you at 420 Avis Avenue. We hope this space gave you everything you needed — rest, comfort, and a little corner of Massillon to call your own. Safe travels, and we'd love to have you back anytime."</p>
+    </div>
+
+    <!-- Checklist -->
+    <div>
+      <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-md flex items-center gap-2">
+        <span class="material-symbols-outlined">checklist</span>Checkout Checklist
+      </h3>
+      <div class="space-y-stack-sm" id="checkout-list"></div>
+    </div>
+
+    <!-- Lock instructions -->
+    <div class="bg-surface-container-lowest p-6 rounded-xl paper-shadow space-y-stack-md">
+      <h4 class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Before You Leave</h4>
+
+      <div class="space-y-3">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-on-surface mt-0.5 shrink-0">garage</span>
+          <p class="font-body-md text-body-md text-on-surface-variant">Make sure the <strong>garage door is fully closed</strong>.</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-on-surface mt-0.5 shrink-0">door_back</span>
+          <p class="font-body-md text-body-md text-on-surface-variant">The <strong>man door</strong> from the garage into the kitchen — close it, but leave it <strong>unlocked</strong>.</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-on-surface mt-0.5 shrink-0">lock</span>
+          <p class="font-body-md text-body-md text-on-surface-variant">The <strong>front door</strong> — close it and lock it on your way out.</p>
+        </div>
+      </div>
+
+      <!-- Keypad how-to -->
+      <div class="bg-surface-container-low rounded-xl p-4 space-y-3 mt-2">
+        <p class="font-label-md text-label-md text-on-surface uppercase tracking-widest" style="font-size:11px; opacity:.7;">Electronic Keypad</p>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary mt-0.5 shrink-0" style="font-size:20px;">lock_open</span>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface mb-0.5">To Unlock</p>
+            <p class="font-body-md text-body-md text-on-surface-variant" style="font-size:14px;">Enter your code → press the ✓ checkmark → <strong>pull the door</strong> toward you while the lock is moving.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary mt-0.5 shrink-0" style="font-size:20px;">lock</span>
+          <div>
+            <p class="font-label-md text-label-md text-on-surface mb-0.5">To Lock</p>
+            <p class="font-body-md text-body-md text-on-surface-variant" style="font-size:14px;">Press the ✓ checkmark while <strong>pulling the door</strong> firmly closed. The lock will engage.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-on-surface-variant mt-0.5 shrink-0" style="font-size:20px;">battery_low</span>
+          <p class="font-body-md text-body-md text-on-surface-variant" style="font-size:14px;">If the checkmark turns red or orange, the batteries are low. Spare batteries are in the toolbox.</p>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-1">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-on-surface mt-0.5 shrink-0">star</span>
+          <p class="font-body-md text-body-md text-on-surface-variant">A review means the world to us — thank you!</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-on-surface mt-0.5 shrink-0">favorite</span>
+          <p class="font-body-md text-body-md text-on-surface-variant">Safe travels. We hope to see you again. 🌿</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       BOTTOM NAV (6 items)
+  ════════════════════════════════════════════ -->
+  <nav id="bottom-nav" class="fixed bottom-0 z-50 flex justify-around items-start pt-3 pb-8 bg-surface-container-lowest rounded-t-xl" style="left:50%;transform:translateX(-50%);width:100%;max-width:480px;box-shadow:0 -4px 20px 0 rgba(71,83,71,0.08);">
+    <button id="nb-home"     onclick="go('home')"     class="nav-btn flex flex-col items-center gap-0.5 flex-1 active:scale-90 transition-transform duration-150">
+      <span class="material-symbols-outlined nav-icon" style="font-size:22px;">home</span>
+      <span class="nav-label" style="font-size:10px;font-weight:600;font-family:Inter,sans-serif;">Home</span>
+    </button>
+    <button id="nb-wifi"     onclick="go('wifi')"     class="nav-btn flex flex-col items-center gap-0.5 flex-1 active:scale-90 transition-transform duration-150">
+      <span class="material-symbols-outlined nav-icon" style="font-size:22px;">wifi</span>
+      <span class="nav-label" style="font-size:10px;font-weight:600;font-family:Inter,sans-serif;">WiFi</span>
+    </button>
+    <button id="nb-howtos"   onclick="go('howtos')"   class="nav-btn flex flex-col items-center gap-0.5 flex-1 active:scale-90 transition-transform duration-150">
+      <span class="material-symbols-outlined nav-icon" style="font-size:22px;">menu_book</span>
+      <span class="nav-label" style="font-size:10px;font-weight:600;font-family:Inter,sans-serif;">Guide</span>
+    </button>
+    <button id="nb-trash"    onclick="go('trash')"    class="nav-btn flex flex-col items-center gap-0.5 flex-1 active:scale-90 transition-transform duration-150">
+      <span class="material-symbols-outlined nav-icon" style="font-size:22px;">delete_outline</span>
+      <span class="nav-label" style="font-size:10px;font-weight:600;font-family:Inter,sans-serif;">Trash</span>
+    </button>
+    <button id="nb-around"   onclick="go('around')"   class="nav-btn flex flex-col items-center gap-0.5 flex-1 active:scale-90 transition-transform duration-150">
+      <span class="material-symbols-outlined nav-icon" style="font-size:22px;">explore</span>
+      <span class="nav-label" style="font-size:10px;font-weight:600;font-family:Inter,sans-serif;">Around</span>
+    </button>
+    <button id="nb-checkout" onclick="go('checkout')" class="nav-btn flex flex-col items-center gap-0.5 flex-1 active:scale-90 transition-transform duration-150">
+      <span class="material-symbols-outlined nav-icon" style="font-size:22px;">key</span>
+      <span class="nav-label" style="font-size:10px;font-weight:600;font-family:Inter,sans-serif;">Checkout</span>
+    </button>
+  </nav>
+
+  <script>
+    // ── COLORS ──────────────────────────────────────────
+    const C_ACTIVE = '#475347';
+    const C_MUTED  = '#747872';
+
+    // ── NAVIGATION ──────────────────────────────────────
+    const PAGES = ['home','arrival','wifi','howtos','trash','around','checkout'];
+    let currentPage = 'home';
+
+    function go(page) {
+      currentPage = page;
+      PAGES.forEach(p => {
+        document.getElementById('sec-' + p).classList.toggle('active', p === page);
+        const nb = document.getElementById('nb-' + p);
+        if (!nb) return; // arrival has no nav button
+        const icon = nb.querySelector('.nav-icon');
+        const isActive = p === page;
+        nb.style.color = isActive ? C_ACTIVE : C_MUTED;
+        icon.style.fontVariationSettings = isActive
+          ? "'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24"
+          : "'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24";
+      });
+      // Reset Around Us to index when navigating away
+      if (page !== 'around') backToCategories(true);
+      window.scrollTo({ top: 0 });
+    }
+
+    // Set initial nav state
+    document.getElementById('nb-home').style.color = C_ACTIVE;
+    document.getElementById('nb-home').querySelector('.nav-icon').style.fontVariationSettings = "'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24";
+    ['wifi','howtos','trash','around','checkout'].forEach(p => {
+      const el = document.getElementById('nb-' + p);
+      if (el) el.style.color = C_MUTED;
+    });
+
+    // ── HOW-TOS TABS ────────────────────────────────────
+    const HOWTO_TABS = ['tv','thermostat','ac'];
+
+    function switchHowToTab(tab) {
+      HOWTO_TABS.forEach(t => {
+        document.getElementById('howto-' + t).classList.toggle('active', t === tab);
+        const btn = document.getElementById('htab-' + t);
+        const isActive = t === tab;
+        btn.style.opacity = isActive ? '1' : '0.4';
+        btn.style.borderBottomColor = isActive ? '#1b1c1c' : 'transparent';
+      });
+      window.scrollTo({ top: 0 });
+    }
+
+    // ── WIFI COPY ────────────────────────────────────────
+    function copyWifi() {
+      const pw   = 'cozystay';
+      const btn  = document.getElementById('copy-btn');
+      const icon = document.getElementById('copy-icon');
+      const txt  = document.getElementById('copy-text');
+
+      const done = () => {
+        icon.innerText = 'check';
+        txt.innerText  = 'Copied!';
+        btn.style.backgroundColor = '#3a6350';
+        setTimeout(() => {
+          icon.innerText = 'content_copy';
+          txt.innerText  = 'Copy Password';
+          btn.style.backgroundColor = '#1b1c1c';
+        }, 2200);
+      };
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(pw).then(done).catch(() => fallbackCopy(pw, done));
+      } else {
+        fallbackCopy(pw, done);
+      }
+    }
+
+    function fallbackCopy(text, cb) {
+      const el = Object.assign(document.createElement('textarea'), { value: text });
+      Object.assign(el.style, { position:'fixed', opacity:'0' });
+      document.body.appendChild(el);
+      el.focus(); el.select();
+      try { document.execCommand('copy'); cb(); } catch(e) {}
+      document.body.removeChild(el);
+    }
+
+    // ── CHECKOUT CHECKLIST ───────────────────────────────
+    const CHECK_ITEMS = [
+      { id:'dishes',  label:'Load the dishwasher',       note:'Or wash and put away all dishes' },
+      { id:'trash',   label:'Empty all trash cans',      note:'Replace bags from under the kitchen sink' },
+      { id:'linens',  label:'Leave linens on the floor', note:'Pile used towels & bed linens in the bathroom' },
+      { id:'lights',  label:'Turn off lights & AC',      note:'Check every room — fans, lights, TV' },
+      { id:'windows', label:'Close all windows',         note:'Close and latch every window' },
+      { id:'garage',  label:'Close the garage door',     note:'Make sure it’s fully down before you go' },
+      { id:'lock',    label:'Lock the front door',       note:'Pull door firmly shut, press ✓ while pulling' },
+    ];
+
+    const CK_KEY = 'avis-right-checkout-v1';
+    const getState = () => { try { return JSON.parse(localStorage.getItem(CK_KEY) || '{}'); } catch { return {}; } };
+    const setState = s => { try { localStorage.setItem(CK_KEY, JSON.stringify(s)); } catch {} };
+
+    function renderChecklist() {
+      const s = getState();
+      const allDone = CHECK_ITEMS.every(i => s[i.id]);
+      document.getElementById('checkout-list').innerHTML =
+        CHECK_ITEMS.map(item => {
+          const done = !!s[item.id];
+          return `<div class="flex items-center p-stack-md bg-surface-container-lowest rounded-xl paper-shadow cursor-pointer active:scale-[0.98] transition-transform" onclick="toggleTask('${item.id}')">
+            <span class="material-symbols-outlined mr-4" style="font-size:24px;color:${done ? C_ACTIVE : '#c4c8c0'};font-variation-settings:'FILL' ${done?1:0},'wght' 400,'GRAD' 0,'opsz' 24;">${done ? 'check_circle' : 'radio_button_unchecked'}</span>
+            <span class="font-body-md text-body-md" style="color:${done ? C_MUTED : '#1b1c1c'};opacity:${done ? 0.6 : 1};">${item.label}</span>
+          </div>`;
+        }).join('') +
+        (allDone ? `<div class="text-center pt-4 font-label-md text-label-md" style="color:${C_ACTIVE};">🎉 You're all set — safe travels!</div>` : '');
+    }
+
+    function toggleTask(id) {
+      const s = getState();
+      s[id] = !s[id];
+      setState(s);
+      renderChecklist();
+    }
+
+    renderChecklist();
+
+    // ── AROUND US ────────────────────────────────────────
+    function showCategory(cat) {
+      document.getElementById('around-index').style.display = 'none';
+      document.querySelectorAll('.around-detail').forEach(d => d.classList.remove('active'));
+      document.getElementById('detail-' + cat).classList.add('active');
+      window.scrollTo({ top: 0 });
+    }
+
+    function backToCategories(silent) {
+      document.getElementById('around-index').style.display = '';
+      document.querySelectorAll('.around-detail').forEach(d => d.classList.remove('active'));
+      if (!silent) window.scrollTo({ top: 0 });
+    }
+
+    // ── HEADER BLUR ON SCROLL ────────────────────────────
+    const hdr = document.getElementById('app-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        hdr.style.background = 'rgba(252,249,248,0.92)';
+        hdr.style.backdropFilter = 'blur(12px)';
+        hdr.style.webkitBackdropFilter = 'blur(12px)';
+        hdr.style.boxShadow = '0 1px 0 0 rgba(0,0,0,0.06)';
+      } else {
+        hdr.style.background = '#fcf9f8';
+        hdr.style.backdropFilter = '';
+        hdr.style.webkitBackdropFilter = '';
+        hdr.style.boxShadow = '';
+      }
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
