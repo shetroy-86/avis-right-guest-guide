@@ -1252,6 +1252,7 @@
       { id:'lights',  label:'Turn off lights — set AC to 80° in summer, heat to 60° in winter' },
       { id:'windows', label:'Close all windows' },
       { id:'remotes', label:'Leave the two garage door remotes on the kitchen counter' },
+      { id:'notify',  label:'Text Sheena to let her know you\'ve left', sms:'13302312400' },
     ];
 
     const CK_KEY = 'avis-right-checkout-v1';
@@ -1264,9 +1265,13 @@
       document.getElementById('checkout-list').innerHTML =
         CHECK_ITEMS.map(item => {
           const done = !!s[item.id];
+          const smsBtn = item.sms
+            ? `<a href="sms:+${item.sms}" onclick="event.stopPropagation()" class="ml-3 flex-shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-full font-label-sm text-label-sm active:opacity-60" style="background:#d9e6d6;color:#475347;font-size:12px;"><span class="material-symbols-outlined" style="font-size:15px;">sms</span>Text</a>`
+            : '';
           return `<div class="flex items-center p-stack-md bg-surface-container-lowest rounded-xl paper-shadow cursor-pointer active:scale-[0.98] transition-transform" onclick="toggleTask('${item.id}')">
             <span class="material-symbols-outlined mr-4" style="font-size:24px;color:${done ? C_ACTIVE : '#c4c8c0'};font-variation-settings:'FILL' ${done?1:0},'wght' 400,'GRAD' 0,'opsz' 24;">${done ? 'check_circle' : 'radio_button_unchecked'}</span>
-            <span class="font-body-md text-body-md" style="color:${done ? C_MUTED : '#1b1c1c'};opacity:${done ? 0.6 : 1};">${item.label}</span>
+            <span class="font-body-md text-body-md flex-1" style="color:${done ? C_MUTED : '#1b1c1c'};opacity:${done ? 0.6 : 1};">${item.label}</span>
+            ${smsBtn}
           </div>`;
         }).join('') +
         (allDone ? `<div class="text-center pt-4 font-label-md text-label-md" style="color:${C_ACTIVE};">🎉 You're all set — safe travels!</div>` : '');
