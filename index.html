@@ -148,58 +148,56 @@
       <p class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Welcome to</p>
       <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">420 Avis Avenue</h2>
       <div class="h-0.5 w-12 bg-on-surface rounded-full mt-3"></div>
-
+      <p class="font-body-md text-body-md text-on-surface-variant pt-1">We are so happy you're here and hope you find everything you need for a comfortable stay!</p>
+    </div>
 
     <!-- Property image card -->
     <div class="bg-surface-container-lowest rounded-xl soft-elevation overflow-hidden">
       <div class="overflow-hidden" style="aspect-ratio:3/2;">
         <img class="w-full h-full object-cover" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1549509783154370699/original/b96c79b2-f922-4742-9149-d9280c88cad6.jpeg?im_w=720" alt="420 Avis Avenue">
-
       </div>
     </div>
 
-    <!-- Read upon Arrival button -->
-    <button onclick="go('arrival')" class="w-full bg-primary text-on-primary rounded-xl p-6 flex items-center justify-between soft-elevation active:scale-[0.98] transition-transform duration-150 text-left">
-      <div class="flex items-center gap-4">
-        <span class="material-symbols-outlined text-on-primary" style="font-size:28px; font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;">waving_hand</span>
-        <div>
+    <!-- Navigation cluster: Arrival CTA + Quick links -->
+    <div class="space-y-stack-md">
+      <button onclick="go('arrival')" class="w-full bg-primary text-on-primary rounded-xl p-6 flex items-center justify-between soft-elevation active:scale-[0.98] transition-transform duration-150 text-left">
+        <div class="flex items-center gap-4">
+          <span class="material-symbols-outlined text-on-primary" style="font-size:28px; font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;">waving_hand</span>
           <p class="font-headline-md text-headline-md text-on-primary">Please Read upon Arrival</p>
-          <p class="font-label-sm text-label-sm text-on-primary mt-0.5" style="opacity:.7;"></p>
         </div>
-      </div>
-      <span class="material-symbols-outlined text-on-primary" style="font-size:20px; opacity:.6;">arrow_forward</span>
-    </button>
+        <span class="material-symbols-outlined text-on-primary" style="font-size:20px; opacity:.6;">arrow_forward</span>
+      </button>
 
-    <!-- Quick-link bento grid -->
-    <div class="grid grid-cols-2 gap-gutter-grid">
-      <button onclick="go('wifi')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
-        <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">wifi</span>
-        <div>
-          <p class="font-headline-md text-headline-md text-on-surface">WiFi</p>
-          <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Network Info</p>
-        </div>
-      </button>
-      <button onclick="go('howtos')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
-        <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">menu_book</span>
-        <div>
-          <p class="font-headline-md text-headline-md text-on-surface">How-Tos</p>
-          <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Appliances</p>
-        </div>
-      </button>
-      <button onclick="go('trash')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
-        <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">delete_outline</span>
-        <div>
-          <p class="font-headline-md text-headline-md text-on-surface">Trash</p>
-          <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Schedule</p>
-        </div>
-      </button>
-      <button onclick="go('around')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
-        <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">explore</span>
-        <div>
-          <p class="font-headline-md text-headline-md text-on-surface">Around Us</p>
-          <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Local Guide</p>
-        </div>
-      </button>
+      <div class="grid grid-cols-2 gap-gutter-grid">
+        <button onclick="go('wifi')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
+          <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">wifi</span>
+          <div>
+            <p class="font-headline-md text-headline-md text-on-surface">WiFi</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Network Info</p>
+          </div>
+        </button>
+        <button onclick="go('howtos')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
+          <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">menu_book</span>
+          <div>
+            <p class="font-headline-md text-headline-md text-on-surface">How-Tos</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Appliances</p>
+          </div>
+        </button>
+        <button onclick="go('trash')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
+          <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">delete_outline</span>
+          <div>
+            <p class="font-headline-md text-headline-md text-on-surface">Trash</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Schedule</p>
+          </div>
+        </button>
+        <button onclick="go('around')" class="bg-surface-container-lowest p-6 rounded-xl soft-elevation flex flex-col justify-between aspect-square text-left active:scale-95 transition-transform duration-150">
+          <span class="material-symbols-outlined text-on-surface" style="font-size:30px;">explore</span>
+          <div>
+            <p class="font-headline-md text-headline-md text-on-surface">Around Us</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Local Guide</p>
+          </div>
+        </button>
+      </div>
     </div>
 
     <!-- House rules -->
@@ -231,9 +229,6 @@
           <p class="font-body-md text-body-md text-on-surface">Your door code was sent via text before arrival.</p>
         </div>
       </div>
-    </div>
-
-      <p class="font-body-md text-body-md text-on-surface-variant pt-1">We are so happy you're here and hope you find everything you need for a comfortable stay!</p>
     </div>
 
     <!-- Contact host -->
