@@ -1171,7 +1171,9 @@
     function go(page) {
       currentPage = page;
       PAGES.forEach(p => {
-        document.getElementById('sec-' + p).classList.toggle('active', p === page);
+        const sec = document.getElementById('sec-' + p);
+        if (!sec) return;
+        sec.classList.toggle('active', p === page);
         const nb = document.getElementById('nb-' + p);
         if (!nb) return; // arrival has no nav button
         const icon = nb.querySelector('.nav-icon');
