@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guest Guide QR — 420 Avis Avenue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      width: 380px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #747872;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #1b1c1c;
+      line-height: 1.25;
+      margin-bottom: 32px;
+    }
+
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    #qrcode canvas, #qrcode img {
+      border-radius: 8px;
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: #475347;
+      margin: 0 auto 20px;
+      border-radius: 2px;
+    }
+
+    .instruction {
+      font-size: 14px;
+      color: #444842;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .url {
+      font-size: 12px;
+      color: #747872;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.03em;
+    }
+
+    @media print {
+      body {
+        background: white;
+        min-height: unset;
+      }
+      .card {
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+        padding: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <p class="eyebrow">Your Stay at</p>
+    <h1>420 Avis Avenue<br>Guest Guide</h1>
+    <div id="qrcode"></div>
+    <div class="divider"></div>
+    <p class="instruction">Scan for WiFi, how-tos,<br>local recommendations & checkout info.</p>
+    <p class="url">420avis.netlify.app</p>
+  </div>
+
+  <script>
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://420avis.netlify.app/",
+      width: 220,
+      height: 220,
+      colorDark: "#1b1c1c",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>
